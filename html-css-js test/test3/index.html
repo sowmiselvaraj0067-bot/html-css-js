@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+//  1. Reverse a String
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+
+console.log(reverseString("hello")); // "olleh"
+
+//  2. Count Vowels in a String
+function countVowels(str) {
+  let vowels = "aeiou";
+  let count = 0;
+  for (let char of str.toLowerCase()) {
+    if (vowels.includes(char)) count++;
+  }
+  return count;
+}
+
+
+console.log(countVowels("Education")); // 5
+
+// 3. Find the Longest Word
+function findLongestWord(sentence) {
+  let words = sentence.split(" ");
+  let longest = "";
+
+  for (let word of words) {
+    if (word.length > longest.length) {
+      longest = word;
+    }
+  }
+  return longest;
+}
+
+
+console.log(findLongestWord("Learning JavaScript is fun")); // "JavaScript"
+
+//  4. Check for Palindrome
+function isPalindrome(str) {
+  let reversed = str.split("").reverse().join("");
+  return str === reversed;
+}
+
+
+console.log(isPalindrome("madam")); // true
+
+//  5. Remove Duplicates from an Array
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+
+console.log(removeDuplicates([1, 2, 3, 2, 4, 1])); 
+
+
+// 6. Find Second Largest Number
+function secondLargest(arr) {
+  let unique = [...new Set(arr)];
+  unique.sort((a, b) => b - a);
+  return unique[1];
+}
+
+console.log(secondLargest([10, 5, 8, 20, 15])); // 15
+
+//  7. Count Character Frequency
+function charFrequency(str) {
+  let freq = {};
+  for (let char of str) {
+    freq[char] = (freq[char] || 0) + 1;
+  }
+  return freq;
+}
+
+
+console.log(charFrequency("apple"));
+
+
+// 8. Sum of Digits
+function sumOfDigits(num) {
+  return num
+    .toString()
+    .split("")
+    .reduce((sum, digit) => sum + Number(digit), 0);
+}
+
+
+console.log(sumOfDigits(1234)); // 10
+
+//  9. Sort Words Alphabetically
+function sortWords(sentence) {
+  return sentence.split(" ").sort().join(" ");
+}
+
+
+console.log(sortWords("banana apple mango"));
+// "apple banana mango"
+
+// 10. Find Missing Number in an Array
+function findMissingNumber(arr) {
+  let n = arr.length + 1; 
+  let total = (n * (n + 1)) / 2;
+  let sum = arr.reduce((a, b) => a + b, 0);
+  return total - sum;
+}
+
+
+console.log(findMissingNumber([1, 2, 4, 5, 6])); // 3
+
+    </script>
+</body>
+</html>
